@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>red the coments</title>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="logo titel.png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+
+<style>
+
+</style>
+    <header id="header" class="header_home">
+        <div></div>
+        <img src="logo light2.png" >
+        <div></div>
+    </header>
+
+  
+   
+</div>
+                  
+
+
+   <div  id="post" class="post " style="margin-left: 10px;  width: 100%; " >
+    <div class="lds-ellipsis col coment_loding" id="wid_hg" ><div></div><div></div><div></div><div></div></div>
+   <div class="posts " id="poste" style="display: none;">
+           <div class="header_post" id="header_post" >
+           <div class="header_postp1">
+               
+   <img src="default-avatar.jpg" onclick="click_user_other(`${poster.author.id}`)">
+   <h3 class="other_color name_post" id="name_post" onclick="click_user_other(`${poster.author.id}`)"> name</h3>                                    
+           </div>
+   
+      </div>
+      <div class="titel_post" id="titel_post">
+       <p class="other_color drk_text" id="tit_post" > 
+this is the first MY post 
+       </p>  </div>
+       <div class="pic_post" id="pic_post" > 
+           <img src="photo_2024-08-13_23-16-48.jpg" >
+       </div>
+    <div class="Tag" id="Tag">
+       <h5 id="back" onclick="backWEB()">back<i class="fa-solid fa-arrow-left"></i></h5>
+       <h5>وقت نشر</h5>
+    </div> <div class="coments"id="coments">
+       <div class=" coments_pepole"><!--first coment people -->
+           <img src="default-avatar.jpg" onclick="click_user_other(`${poster.author.id}`)">
+           <div class="info_comant">
+           <h3 id="name_com"onclick="click_user_other(`${poster.author.id}`)">name</h3>
+           
+           <p class="other_color" id="tit_com">nice pizjnzzmzc</p></div>
+           
+                   </div><!--end coment people -->
+      
+                   
+          
+                   </div>
+      
+           
+                   
+                   
+       <div class="add_coment" id="add_coment" > 
+ 
+ <button id="send_coments" class="send_coments" ><i class="fa-solid fa-arrow-up"></i></button>
+ <textarea class="text_coment " id="text_coment"></textarea>
+ 
+       </div></div>
+
+
+    </div>
+</body>
+</html>
+
+
+<script>
+     const URLPar=new URLSearchParams(window.location.search)
+     let Url= URLPar.get("postId")
+    let header_post=document.getElementById("header_post")
+    let header=document.getElementById("header")
+    let titel_post=document.getElementById("titel_post")
+    let pic_post=document.getElementById("pic_post")
+    let coments=document.getElementById("coments")
+    let add_coment=document.getElementById("add_coment")
+    let text_coment=document.getElementById("text_coment")
+    let Tag=document.getElementById("Tag")
+    let post=document.getElementById("post")
+    let poste=document.getElementById("poste")
+    let tit_post=document.getElementById("tit_post")
+    let name_post=document.getElementById("name_post")
+    let name_com=document.getElementById("name_com")
+    let tit_com=document.getElementById("tit_com")
+    const token =localStorage.getItem("token")
+    let chak=true
+    let save_mood=localStorage.getItem("mood")
+ 
+  
+    save_moood()
+   function dirk(){
+       document.body.style.background="#041B24"
+   header_post.style.background="var(--color_dirkbl)"
+   header.style.background="var(--color_dirkbl)"
+   post.style.background="var(--color_dirkbl)"
+   poste.style.background="var(--color_dirkbl)"
+   titel_post.style.background="var(--color_dirkbl)"
+   coments.style.background="var(--color_dirkbl)"
+   add_coment.style.background="var(--color_dirkbl)"
+   text_coment.style.background="var(--color_dirkbl)"
+   Tag.style.background="var(--color_dirkbl)"
+   pic_post.style.background="var(--color_dirkbl)"
+
+   name_com.style.color="var( --color_light)"
+   name_post.style.color="var( --color_light)"
+   tit_post.style.color="var( --color_light)"
+   tit_com.style.color="var( --color_light)"
+   text_coment.style.color="var( --color_light)"
+   localStorage.setItem("mood","dirk")
+   }
+   function light(){
+       
+       document.body.style.background="#FCFCFC"
+    header_post.style.background="var( --color_light)"
+   header.style.background="var( --color_light)"
+   titel_post.style.background="var( --color_light)"
+   post.style.background="var( --color_light)"
+   poste.style.background="var( --color_light)"
+   coments.style.background="var( --color_light)"
+   pic_post.style.background="var( --color_light)"
+   add_coment.style.background="var( --color_light)"
+   Tag.style.background="var( --color_light)"
+   text_coment.style.background="var( --color_light)"
+
+   name_com.style.color="var( --color_dirkbl)"
+   name_post.style.color="var( --color_dirkbl)"
+   tit_post.style.color="var( --color_dirkbl)"
+   tit_com.style.color="var( --color_dirkbl)"
+   text_coment.style.color="var( --color_dirkbl)"
+   localStorage.setItem("mood","light")
+   }
+function save_moood(){
+    if(save_mood=="light"){
+        light()
+        chak=true;
+    }
+    else{
+        dirk() 
+        chak=false
+    }
+}
+function backWEB(){
+    window.location="index.html"
+}
+
+get_coment_post()
+
+function get_coment_post(){
+    
+    const URLPar=new URLSearchParams(window.location.search)
+     let Url= URLPar.get("postId")
+     console.log(Url)
+     axios.get(`https://tarmeezacademy.com/api/v1/posts/${Url}`)
+     .then(function (response)
+     {
+        
+        let info_pt_coment=response.data.data
+        let coments=info_pt_coment.comments
+        
+        let languagedBack=""
+            if(localStorage.getItem("language")=="Arb"){
+                languagedBack="العوده"
+            }
+            else{
+                languagedBack="Back"
+            }
+       
+        post.innerHTML=""
+        let col ="color"
+        if(localStorage.getItem("mood")=="light"){
+         col="light_b"
+        
+    }else{
+          col= "dirk_b"
+    }
+    
+        let profURL = typeof info_pt_coment.author.profile_image === 'string' ? info_pt_coment.author.profile_image.trim() : '';
+        let proHtml = profURL ? 
+        `
+        <img src="${info_pt_coment.author.profile_image}"onclick="click_user_other(${info_pt_coment.author.id})">
+       `
+       : 
+        `
+        <img src="default-avatar.jpg" onclick="click_user_other(${info_pt_coment.author.id})">
+       `;
+       let imageUrl = typeof info_pt_coment.image === 'string' ? info_pt_coment.image.trim() : '';
+
+let imageHtml = imageUrl ? 
+` <div class="pic_post ${col}" id="pic_post" > 
+            <img src="${imageUrl}"  >
+        </div>` 
+        : 
+
+        `<div class="pic_post" style="display:none;"></div>`;
+
+   let comt=""
+  
+        for(com_peo of response.data.data.comments){
+          
+        let profcomL = typeof com_peo.author.profile_image === 'string' ?com_peo.author.profile_image.trim() : '';
+        let procom = profcomL ? 
+        `
+        <img src="${com_peo.author.profile_image}" onclick="click_user_other(${com_peo.author.id})">
+       `
+       : 
+        `
+        <img src="default-avatar.jpg" onclick="click_user_other(${com_peo.author.id})">
+       `;
+            console.log(com_peo.body)
+            comt+=
+            `
+              <div class=" coments_pepole ${col}"><!--first coment people -->
+           ${procom}
+           <div class="info_comant ${col}">
+           <h3 id="name_com ${col}" onclick="click_user_other(${com_peo.author.id})">${com_peo.author.name}</h3>
+           
+           <p class=" ${col}" id="tit_com"> ${com_peo.body}</p></div>
+           
+                   </div><!--end coment people -->
+            `
+        }
+      com=`<div class="posts " id="poste">
+           <div class="header_post ${col}" id="header_post" >
+           <div class="header_postp1">
+               
+  ${proHtml}
+   <h3 class="${col}" id="name_post" onclick="click_user_other(${info_pt_coment.author.id})" >${info_pt_coment.author.name}</h3>                                    
+           </div>
+   
+      </div>
+      <div class="titel_post ${col}" id="titel_post">
+       <p class="  ${col}" id="tit_post" > 
+${info_pt_coment.body}
+       </p>  </div>
+       ${imageHtml}
+    <div class="Tag" id="Tag">
+        <h5>${info_pt_coment.created_at}</h5>
+       <h5 id="back" onclick="backWEB()">${languagedBack}  <i class="fa-solid fa-arrow-left"></i></h5>
+    </div> <div class="coments ${col}"id="coments">
+       ${comt}
+                   
+          
+                   </div>
+      
+           
+                   
+                   
+       <div class="add_coment" id="add_coment" > 
+ 
+ <button id="send_coments" class="send_coments" onclick="send_coment()"><i class="fa-solid fa-arrow-up"></i></button>
+ <textarea class="text_coment  ${col}" id="text_coment"></textarea>
+ 
+       </div></div>`
+      
+      
+        post.innerHTML+=com
+     })
+}
+
+
+function send_coment(){
+
+let text_coment=document.getElementById("text_coment").value
+
+let per={
+    "body":text_coment
+}
+
+const token =localStorage.getItem("token")
+
+axios.post(`https://tarmeezacademy.com/api/v1/posts/${Url}/comments`,per,{
+    headers:{
+        "authorization": `Bearer ${token}` 
+    }
+})
+.then(function (response) {
+console.log(response.data)
+get_coment_post()
+})
+.catch(function (error) {
+// handle error
+if(error.data==undefined && localStorage.getItem("language")=="Arb"){
+    alert("لا يمكن ارسال تعليق فارغ");
+}
+else if(error.data==undefined && localStorage.getItem("language")=="Eng"){
+    alert("You cannot post an empty comment.")
+}
+
+
+})
+}
+
+function have_user(){
+    let user=null
+    const your_userr=localStorage.getItem("user_name")
+    if(your_userr != null)
+    {
+        user=JSON.parse(localStorage.getItem("user_name"))
+
+    }
+        return user
+    
+}
+function move(){
+   let your_user= have_user()
+ 
+   
+        window.location=`Profile.html?userid=${your_user.id}`
+  
+}
+function click_user_other(info){
+    window.location=`Profile.html?userid=${info}`
+}
+</script>

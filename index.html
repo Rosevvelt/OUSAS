@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUSAS</title>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="logo titel.png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reem+Kufi:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+   
+    <header id="header" class="header_home">
+        <i class="fa-solid fa-bars" id="list"></i>
+        <img src="logo light2.png">
+        <div></div>
+    </header>
+
+    <div class="SINGS_IN" id="SINGS_IN" ><!-- grid -->
+        <header class="header_SING_IN">
+        
+        <div class="info_sing_up" id="info_sing_up">
+        <h3 class="Taxt" id="fullNAME">Full Name</h3>
+        <input type="text" id="Full_name"> 
+        
+        
+        <h3 class="Taxt" id="email">Email</h3>
+        <input type="email" id="email_inp"> 
+        <h3 class="Taxt" id="user_na">User Name</h3>
+        <input type="text" id="user_names"> 
+        <h3 class="Taxt" id="password">Password</h3>
+        <input type="text" class="password" id="pass"> 
+        <form class=".btn_ssing_up">
+        <button class="btn_sing_up"id="btn_sing_up" type="button">Sing up</button></form>
+        <p class="Taxt"id="pag" > Have an account? <a > Long in</a></p>
+        </div>
+        </header>
+        </div>
+    <div class="log-inHtml" id="LONG_IN" > <!-- grid -->
+        
+        <header class="header-long">
+            
+            <div class="info_long_in" id="info_long_in" >
+            <h3 id="texts"> user_name</h3>
+            <input id="user_NALOGIN" type="text" required>
+            <h3 id="textss" >password</h3>
+            
+            <input id="password_LOGIN" type="password" required >
+            <button class="show" id="eye" > <i class="fa-regular fa-eye-slash"></i></button>
+         <button class="btm_longin" type="button" id="btm_long_in">Long in</button>
+           <p id="textsss">Don't have an account?  <a id="pge_sign_in" href="#" > Sing up</a></p>
+           
+            </div>
+            
+        </header>
+    </div>
+    <div class="homeHTMl" id="homeHTMl"><!-- flex-->
+         <main>
+   
+    <div class="Profile" id="Profile">
+     <div class="info-profile" id="info_profile">
+        <span id="clic_profiles">
+        <div class="i_pp" id="i_inp" > <img id="profile_img" src="default-avatar.jpg" onclick="move()">
+        <h2 id="Name_us"onclick="move()">Name</h2>
+        <p id="pro_user" onclick="move()">@user_name</p></div>
+    </span>
+ <a href="#"class="home" id="home" class="clic"><i class="fa-solid fa-house "></i> Home </a>
+<a href="#"class="system" id="system"><i class="fa-solid fa-gear"></i> system</a>
+
+</div>
+<div class="btm-log-ot" id="btmlogto">
+    <button id="log_in_btm">Long in</button>
+    <button id="sing_up_btm">Sing in</button>
+</div>
+    
+</div>
+                   
+</main>
+
+    <div  id="post" class="post" >
+   
+        <div class="lds-ellipsis col wid_hg" id="wid_hg" ><div></div><div></div><div></div><div></div></div>
+    
+    <div class="posts lit_bac" style="display: none;">
+            <div class="header_post" >
+            <div class="header_postp1">
+                
+    <img src="default-avatar.jpg">
+    <h3 class="other_color name_post" > name</h3>                                    
+    <p>@user_name</p>
+            </div>
+       <div  class="header_postp2">
+    <ul  class="fa-solid fa-ellipsis btm "  ></ul>
+<li class="btm2">Delete</li>
+       </div>
+       </div>
+       <div class="titel_post" >
+        <p class="other_color drk_text" > 
+this is the first MY post 
+        </p>  </div>
+        <div class="pic_post"> 
+            <img src="photo_2024-08-13_23-16-48.jpg" >
+        </div>
+     <div class="Tag">
+        <h5>first post</h5>
+        <h5>profiale</h5>
+     </div> 
+       
+            
+                    
+                    
+      </div>
+
+
+
+
+
+
+
+      
+        
+    </div>                
+                                         
+     
+     
+
+    
+    
+
+   <section dir="rtl" id="sec" >
+    <h1 id="titel_system"> System</h1>
+
+    <div id="lol" class="Lanhuge" dir="rtl">
+    <select id="select" dir="ltr">
+        <option class="option" value="eng">Engilsh</option>
+        <option class="option" value="arb">العربيه</option>
+    </select><h3 id="lun_h3" dir="ltr">Language</h3>
+    </div>
+
+
+    <div class="border"></div>
+    
+    <div   id="mood" class="mood">
+        <h3 id="dark_mood">dark mood</h3>
+        <button id="the_mood">OFF</button>
+      
+        
+    </div><div class="border"></div>
+
+    <div id="chang_img" class="chang_img">
+        <h3 id="titel_new">New profile picture</h3>
+        <label id="fileInput" for="fileInput" class="fileInput"> chang 
+        <input id="rel_fileInput" type="file"  accept="image/*" disabled>
+    </label>
+    <input type="hidden" id="sive_user" value="">
+    </div>
+    <div class="border"></div>
+    <div class="log_out">
+        <h2  id="log_out">LOG OUT</h2>
+    </div>
+</section>
+<div class="s_post" id="s_post">
+    <i class="fa-solid fa-pen-to-square"></i>
+</div>
+
+   <div class="add_post" id="add_post">
+  <div class="closs" id="closs"> <i class="fa-solid fa-xmark"></i></div> 
+
+  <div class="sher_post" id="sher_post" >
+        <div class="titel_creat">
+        <textarea id="titel_c"></textarea>
+        <p  class="fa-solid fa-xmark"id="closs_pic_post" style="display: none;"></p>  <img src="" id="img_add_post" style="display: none;"></div>
+        <div class="inp_creat">
+            <label id="label" for="fileInput" style="cursor: pointer;">add picture </label>
+        <input id="INPUT" type="file" accept="image/*">
+        <button id="shere" style="cursor: pointer;" > send</button>
+        </div></div>
+    <div class="question" id="question">
+        <button id="Add_Anew_picer_post" style="cursor: pointer;" onclick="clic_add_post()">Add a post</button>
+        <button id="Add_Anew_write_post"style="cursor: pointer;" onclick="clic_write_post()">Add a Write a post</button>
+    </div>
+    <div class="sher_post_write" id="sher_post_write">
+        <div class="titel_creatNte">
+            <textarea id="titel_cAnte" ></textarea>
+            <button id="shereAnte" style="cursor: pointer;" onclick="cruet_write_post()"> send</button>
+    </div>
+
+
+    </div>
+    
+    </div>
+
+</body>
+<script src="functipnHome.js"></script>
+<script src="home.js"></script>
+
+</html>
